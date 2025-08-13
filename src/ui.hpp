@@ -1,13 +1,14 @@
 // FUCK YOU
 #pragma once
+
 #include <Geode/Geode.hpp>
+
 using namespace geode::prelude;
 
 class GadolinUI : public geode::Popup<> {
 protected:
     CCMenu* m_categoryMenu;
     CCMenu* m_contentMenu;
-    CCLabelBMFont* m_titleLabel;
     std::string m_currentCategory;
 
     bool setup() override;
@@ -16,14 +17,14 @@ protected:
     void updateContentForCategory(const std::string& category);
     
     void onCategoryPressed(CCObject* sender);
-    void onPlayerOptionPressed(CCObject* sender);
-    void onCreatorOptionPressed(CCObject* sender);
-    void onMiscOptionPressed(CCObject* sender);
-    void onSettingsOptionPressed(CCObject* sender);
+    void onTogglePressed(CCObject* sender);
+    void onSliderChanged(CCObject* sender);
+    void onPopupPressed(CCObject* sender);
 
     CCMenuItemSpriteExtra* createCategoryButton(const std::string& category);
-    CCMenuItemToggler* createToggleOption(const std::string& text, bool enabled, SEL_MenuHandler callback);
-    CCMenuItemSpriteExtra* createActionButton(const std::string& text, SEL_MenuHandler callback);
+    CCMenuItemToggler* createToggleOption(const std::string& saveKey, bool defaultVal);
+    CCNode* createSliderOption(const std::string& saveKey, float defaultVal, float min, float max);
+    CCMenuItemSpriteExtra* createPopupButton(const std::string& action);
 
 public:
     static GadolinUI* create() {
