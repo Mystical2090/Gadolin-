@@ -1,0 +1,14 @@
+{
+	"geode": "4.6.3",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "mystical433.gadolin",
+	"name": "Gadolin",
+	"version": "v1.0.0",
+	"developer": "mystical433",
+	"description": ""
+}
