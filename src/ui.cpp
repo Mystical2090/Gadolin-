@@ -233,7 +233,6 @@ void GadolinUI::onTogglePressed(CCObject* sender) {
     bool newValue = toggle->isToggled();
     
     Mod::get()->setSavedValue<bool>(saveKey, newValue);
-    log::info("Toggle {} set to {}", saveKey, newValue);
 }
 
 void GadolinUI::onSliderChanged(CCObject* sender) {
@@ -243,7 +242,6 @@ void GadolinUI::onSliderChanged(CCObject* sender) {
     float value = 1.0f;
     
     Mod::get()->setSavedValue<float>(saveKey, value);
-    log::info("Slider {} set to {}", saveKey, value);
 }
 
 void GadolinUI::onPopupPressed(CCObject* sender) {
@@ -252,6 +250,6 @@ void GadolinUI::onPopupPressed(CCObject* sender) {
     
     log::info("Popup {} triggered", action);
 
-    auto alert = FLAlertLayer::create(nullptr, "Popup", fmt::format("Just a popup",), "OK", nullptr, 300.0f);
+    auto alert = FLAlertLayer::create(nullptr, "Popup", "Just a popup", "OK", nullptr, 300.0f);
     alert->show();
 }
